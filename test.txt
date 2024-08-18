@@ -1,0 +1,24 @@
+
+124234
+for int long short 
+auto enum restrict unsigned
+break extern return void
+case float short volatile
+char for signed while
+const goto sizeof Bool
+continue if static Complex
+default inline struct Imaginary
+do int switch
+double long typedef
+else register union
+
+/*abclghasrg9 w84ht iugn w t94q3h tvohb
+efncw389th4 9b49 58h498h9 */
+
+// hello123
+
+'hello world'
+
+"hello world"
+
+___identifer583846534thfesiugvehwrt875gqev87gq4b87rvfq8________________fbc87q34r38745

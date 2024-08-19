@@ -1,6 +1,6 @@
 lexer: clean main.c lex.yy.c
 	gcc main.c -o lexer
-	./lexer < test.txt
+	./lexer < tester.c
 
 lex.yy.c: reader.l
 	lex reader.l

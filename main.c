@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "lex.yy.c"
 
 
@@ -48,6 +50,15 @@ symboltable addtbl ( symboltable T, char * id )
    return T;
 }
 
+void printtbl ( symboltable T )
+{
+   node *p;
+   p = T;
+   while (p) {
+      printf("%s %d\n", p->name, p->count);
+      p = p -> next;
+   }
+}
 
 void initialise_macro_to_string()
 {
@@ -85,7 +96,7 @@ void initialise_macro_to_string()
 int main()
 {
     initialise_macro_to_string();
-
+    symboltable T = NULL;
     int nextok;
 
     while (nextok = yylex())
@@ -95,10 +106,17 @@ int main()
             printf("\n");
             continue;
         }
-        if (nextok != DELIM) 
+        if (nextok != DELIM) {
         printf("<%s, %s>", MACRO_STRING[nextok], yytext);
+        printf("\n");
+        
+        }
+        
+        
+        
         
     }
+    printtbl(T);
     printf("\n\n");
     return 0;
 }

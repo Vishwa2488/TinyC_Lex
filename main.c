@@ -82,12 +82,22 @@ void initialise_macro_to_string()
 }
 
 
+void print_table(symboltable T)
+{
+    while (T!=NULL)
+    {
+        printf("%s\n", T->name);
+        T = T->next;
+    }
+    return;
+}
+
 int main()
 {
     initialise_macro_to_string();
 
     int nextok;
-
+    symboltable T = NULL;
     while (nextok = yylex())
     {
         if (nextok == NEWLINE)
@@ -95,6 +105,12 @@ int main()
             printf("\n");
             continue;
         }
+        
+        if (nextok == IDENTIFIER)
+        {
+            T = addtbl(T, yytext);
+        }
+
         if (nextok != DELIM) 
         printf("<%s, %s>", MACRO_STRING[nextok], yytext);
         

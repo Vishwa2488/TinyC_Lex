@@ -134,5 +134,8 @@ int main()
     }
     printtbl(T);
     printf("\n\n");
+    printf("The identifiers in the file are\n");   
+    print_table(T);
+    printf("\n\n");
     return 0;
 }

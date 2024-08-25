@@ -50,14 +50,15 @@ symboltable addtbl ( symboltable T, char * id )
    return T;
 }
 
-void printtbl ( symboltable T )
+void printtbl(symboltable T)
 {
-   node *p;
-   p = T;
+   symboltable p = T;
+   
    while (p) {
       printf("%s %d\n", p->name, p->count);
       p = p -> next;
    }
+   return ;
 }
 
 void initialise_macro_to_string()
@@ -93,22 +94,12 @@ void initialise_macro_to_string()
 }
 
 
-void print_table(symboltable T)
-{
-    while (T!=NULL)
-    {
-        printf("%s\n", T->name);
-        T = T->next;
-    }
-    return;
-}
-
 int main()
 {
     initialise_macro_to_string();
     symboltable T = NULL;
     int nextok;
-    symboltable T = NULL;
+  
     while (nextok = yylex())
     {
         if (nextok == NEWLINE)
@@ -122,20 +113,17 @@ int main()
             T = addtbl(T, yytext);
         }
 
-        if (nextok != DELIM) 
-        printf("<%s, %s>", MACRO_STRING[nextok], yytext);
-        printf("\n");
-        
-        }
-        
-        
-        
-        
+        if (nextok != DELIM)
+        {
+            printf("<%s, %s>", MACRO_STRING[nextok], yytext);
+            printf("\n");
+        }  
     }
+    printf("Identifiers:\n");
     printtbl(T);
     printf("\n\n");
     printf("The identifiers in the file are\n");   
-    print_table(T);
+
     printf("\n\n");
     return 0;
 }

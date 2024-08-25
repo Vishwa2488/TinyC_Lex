@@ -1,5 +1,12 @@
+SHELL=/bin/sh
 
-lexer: clean main.c lex.yy.c
+GCC=gcc
+
+LEX=lex
+
+all=main.c lex.yy.c
+
+lexer: clean $(all)
 	gcc main.c -o lexer
 	./lexer < $(file)
 

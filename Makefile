@@ -6,7 +6,7 @@ LEX=lex
 
 all=main.c lex.yy.c
 
-lexer: clean $(all)
+lexer: clean $(all)q
 	gcc main.c -o lexer
 	./lexer < $(file)
 

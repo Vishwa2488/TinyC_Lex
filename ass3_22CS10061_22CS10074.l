@@ -45,7 +45,7 @@
 
 /* Declarations */
 
-/* ********************************* 1. Keywords *************************************/
+/********************************** 1. Keywords *************************************/
 
 types "short"|"long"|"int"|"char"|"Bool"|"float"|"auto"|"signed"|"unsigned"|"Complex"|"double"|"Imaginary" 
 
@@ -165,6 +165,9 @@ multiline {all}*
 {compare}        { return PUNC_COMPARE; }
 {operator}       { return PUNC_ARITHMETIC; }
 {boolean}        { return PUNC_LOGICAL; }
+{shift}          { return PUNC_SHIFT; }                         
+{bitwise}        { return PUNC_BITWISE; }     
+{do_assign}      { return PUNC_ARITHMETIC; }   
 {eod}            { return PUNC_EOD; }
 {spl_punc}       { return PUNC_SPL; }
 {brackets}       { return PUNC_BRACKETS; }

@@ -89,7 +89,6 @@ float {fractional_const}{exp}?|{digit_sequence}{exp}
 
 /******************************** 4. String Literals ************************************/
 
-<<<<<<< HEAD
 escape_sequence "\\\'"|"\\\""|"\\?"|"\\\\"|"\\a"|"\\b"|"\\f"|"\\n"|"\\r"|"\\t"|"\\v" 
 c_char \'[^\'\n\\']\'|\'{escape_sequence}\'
 
@@ -127,34 +126,12 @@ spl_punc ":"|"?"|"="|"~"|","|"#"|"..."|"."|"->"|";"
 brackets [\[\]\(\)\{\}]
 space [\t ]
 spaces {space}*
-=======
-
-
-
-
-
-
-/******************************** 5. Punctuations ************************************/
-
-compare ">"|"<"|"<="|">="|"=="|"!="
-operator "++"|"--"|"-"|"+"|"*"|"/"|"%"
-boolean_operators "&&"|"||"
-eod ;
-shift "<<"|">>"
-bitwise "&"|"|" "
-
-/*    . ->   & ~ !       ^ |            ? :  ...         = *= /= %= += -= <<= >>= &= ^= |=         , # */ 
-brackets [\[\]\(\)\{\}]
-space [\t ]
-spaces [space]*
->>>>>>> 2d69b98 (Add files via upload)
 /******************************** 6. Comments ************************************/
 
 start \/\*
 end \*\/
 singleline \/\/.*\n
 line .*\n
-<<<<<<< HEAD
 newline \n
 all {line}|{newline}
 multiline {all}*
@@ -171,21 +148,6 @@ multiline {all}*
 {switchcase}     { return KEYWORD; }
 {looper}         { return KEYWORD; }
 {others}         { return KEYWORD; }
-=======
-
-/* Transition Rules */
-%%
-
-{start}.*{end}      { return COMMENT_MULTILINE; }
-{types}          { return KEYWORD_TYPE; }
-{declarations}   { return KEYWORD_DECLARATIONS; }
-{udt}            { return KEYWORD_UDT; }
-{general}        { return KEYWORD_GENERAL; }
-{ifelse}         { return KEYWORD_IFELSE; }
-{switchcase}     { return KEYWORD_SWITCHCASE; }
-{looper}         { return KEYWORD_LOOPER; }
-{others}         { return KEYWORD_OTHERS; }
->>>>>>> 2d69b98 (Add files via upload)
 
 
 
@@ -194,7 +156,6 @@ multiline {all}*
 
 
 {integer}        { return CONST_INTEGER; }
-<<<<<<< HEAD
 {float}          { return CONST_FLOAT; }
 {c_char}         { return CONST_CHAR; }
 {c_char_sequence} { return CONST_CHAR_SEQUENCE; }
@@ -212,12 +173,6 @@ multiline {all}*
 {singleline}     { return COMMENT_SINGLELINE; }
 {newline}        { return NEWLINE; }
 {spaces}         { return DELIM; }
-=======
-
-{singleline}     { return COMMENT_SINGLELINE;}
-
-{spaces} { return DELIM; }
->>>>>>> 2d69b98 (Add files via upload)
 
 %%
 

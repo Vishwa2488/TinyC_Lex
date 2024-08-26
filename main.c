@@ -101,7 +101,6 @@ int main()
     {
         if (nextok == NEWLINE)
         {
-            printf("\n");
             continue;
         }
         
@@ -111,7 +110,7 @@ int main()
         }
 
         if (nextok != DELIM) 
-        printf("<%s, %s>", MACRO_STRING[nextok], yytext);
+        printf("< %s, %s >\n", MACRO_STRING[nextok], yytext);
         
     }
     printf("\n\n");

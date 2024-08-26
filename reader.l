@@ -20,6 +20,7 @@
     #define CONST_INTEGER 31
     #define CONST_FLOAT 32
     #define CONST_CHAR 33
+    #define CONST_CHAR_SEQUENCE 34
     /* String Literal macros */
     #define STRING_LITERAL 40
     
@@ -90,10 +91,10 @@ float {fractional_const}{exp}?|{digit_sequence}{exp}
 
 escape_sequence "\\\'"|"\\\""|"\\?"|"\\\\"|"\\a"|"\\b"|"\\f"|"\\n"|"\\r"|"\\t"|"\\v" 
 c_char \'[^\'\n\\']\'|\'{escape_sequence}\'
-c_char_sequence {c_char}+ 
 
 s_char [^\"\n\\']|{escape_sequence}
 s_char_sequence {s_char}+
+c_char_sequence \'{s_char_sequence}\'
 
 string_literal \"{s_char_sequence}?\"
 
@@ -157,7 +158,7 @@ multiline {all}*
 {integer}        { return CONST_INTEGER; }
 {float}          { return CONST_FLOAT; }
 {c_char}         { return CONST_CHAR; }
-
+{c_char_sequence} { return CONST_CHAR_SEQUENCE; }
 
 {string_literal} { return STRING_LITERAL; }
 
@@ -166,12 +167,12 @@ multiline {all}*
 {boolean}        { return PUNC_LOGICAL; }
 {eod}            { return PUNC_EOD; }
 {spl_punc}       { return PUNC_SPL; }
-{brackets}      { return PUNC_BRACKETS; }
+{brackets}       { return PUNC_BRACKETS; }
 
 
 {singleline}     { return COMMENT_SINGLELINE; }
 {newline}        { return NEWLINE; }
-{spaces} { return DELIM; }
+{spaces}         { return DELIM; }
 
 %%
 

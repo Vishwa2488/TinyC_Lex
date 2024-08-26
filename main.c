@@ -4,8 +4,6 @@
 
 char * MACRO_STRING[100] = {NULL};
 
-
-
 // Structure to store name and count of token
 
 typedef struct _node {
@@ -74,6 +72,7 @@ void initialise_macro_to_string()
     MACRO_STRING[PUNC_SPL] = "SPECIAL CHARACTER";
     MACRO_STRING[PUNC_EOD] = "END OF LINE CHARACTER";
     MACRO_STRING[PUNC_BRACKETS] = "SPECIAL CHARACTER";
+    MACRO_STRING[CONST_CHAR_SEQUENCE] = "CHARACTER SEQUENCE";
 
     MACRO_STRING[COMMENT_SINGLELINE] = "singleline comment";
     MACRO_STRING[COMMENT_MULTILINE] = "multiline comment";

@@ -14,9 +14,9 @@ int main(int argc, char const *argv[])
 
     printf("%d %f %lf", x, y, z);
 
-    s_char ______s________ = "1423o85y3443twhgi3h 4tv893qyv69m2 3y5t9q3m ty93q58y9tq53y65y983q4oy89h4"; 
-    c_char __s13534theirghetq34t347thgeb7 = 'a', ______s48th3498vht34w98htv2 = '\n';
-    /* hfaertu9hq4398t hq39tg bwg 9mh983wgqG QRIGHWiehbksrn f
+    s_char _s = "1423o85y3443twhgi3h 4tv893qyv69m2 3y5t9q3m ty93q58y9tq53y65y983q4oy89h4"; 
+    c_char _s13534theirghetq34t347thgeb7 = 'a', ______s48th3498vht34w98htv2 = '\n';
+    /* hfaertu9hq4398t /hq39tg bwg 9mh983wgqG QRIGHWiehbksrn f
     erugb wirgbq9th43q8 t93h5th58ghb4o 8h4wth b4tnh ieu4ghierun9wh rge\n\n
     wjgbei eriguhi gu***********/ /**** 
     */

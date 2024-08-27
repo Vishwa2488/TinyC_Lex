@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "lex.yy.c"
 
 
@@ -85,7 +87,7 @@ void print_table(symboltable T)
 {
     while (T!=NULL)
     {
-        printf("%s\n", T->name);
+        printf("%s %d\n", T->name, T->count);
         T = T->next;
     }
     return;
